@@ -61,7 +61,6 @@ def add_grade(students: list) -> None:
                     print("Invalid grade. Please enter a whole number between 0 and 100.")
                 elif is_number_in_range(grade):
                     student['grades'].append(int(grade))
-                    print(student['grades'])
                 else:
                     print("Invalid grade. Please enter a whole number between 0 and 100.")
 
@@ -92,8 +91,8 @@ def make_report(students: list) -> None:
             gpa: float = s / len(student['grades'])
             max_grade = max(gpa, max_grade)
             min_grade = min(gpa, min_grade)
-            total_grade += s
-            count += len(student['grades'])
+            total_grade += gpa
+            count += 1
 
             print(f"{student['name']}'s average grade is {gpa}.")
         except ZeroDivisionError:
